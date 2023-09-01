@@ -3,3 +3,8 @@
 .font-inter {
     font-family: 'Inter', sans-serif;
 }
+
+.category-btn:focus {
+    background-color: #ff0000;
+    color: white;
+}
