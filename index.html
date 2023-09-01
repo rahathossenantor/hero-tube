@@ -16,11 +16,24 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
+<body class="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 font-inter">
     <header>
+        <nav class="py-4 border-b">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a class="link normal-case text-xl"><img src="./images/Logo.png" alt="logo"></a>
+                </div>
+                <div class="navbar-center lg:flex">
+                    <button id="sort-by-views" class="btn btn-active normal-case text-[17px]">Sort by view</button>
+                </div>
+                <div class="navbar-end">
+                    <button class="btn hover:bg-red-600 hover:text-white normal-case bg-red-600 text-white px-7 text-[17px]">Blogs</button>
+                </div>
+            </div>
+        </nav>
     </header>
+
     <main></main>
-    <footer></footer>
 
     <script src="./js/script.js"></script>
 </body>
