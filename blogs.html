@@ -16,12 +16,12 @@
 </head>
 <body class="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 font-inter" >
     <header>
-        <nav class="py-4 border-b">
+        <nav class="py-3 border-b">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
                     <a class="link normal-case text-xl"><img src="./images/Logo.png" alt="logo"></a>
                 </div>
-                <div class="navbar-center lg:flex">
+                <div class="navbar-center lg:flex md:flex hidden">
                     <h3 class="text-3xl font-semibold">Blogs</h3>
                 </div>
                 <div class="navbar-end">
@@ -31,6 +31,12 @@
         </nav>
     </header>
 
-    <main></main>
+    <main class="py-5">
+        <section>
+            <div id="blog-container" class="grid grid-cols-3 gap-5">
+            </div>
+        </section>
+    </main>
+    <script src="./js/blogs.js"></script>
 </body>
 </html>
