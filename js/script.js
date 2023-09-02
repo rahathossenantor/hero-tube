@@ -19,12 +19,12 @@ const secondsToMinutes = (seconds) => {
     return minutes;
 }
 
-// get category buttons
+// load category buttons
 const loadCategoryButtons = async () => {
     const categoryContainer = getElement("category-btn-container");
     categoryContainer.innerHTML = "";
 
-    // load categories
+    // load category data
     const res = await fetch("https://openapi.programming-hero.com/api/videos/categories");
     const data = await res.json();
     const categories = data.data;
@@ -41,25 +41,32 @@ const loadCategoryButtons = async () => {
 }
 
 // handle category button click
+let cards = [];
 const loadCardContents = async (id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
-    const cards = data.data;
-
-    displayCards(cards);
+    cards = data.data;
+    renderCards(cards);
 }
 
-// show cards
-const displayCards = (cards) => {
+// render cards on UI
+const renderCards = (cards, isSorted = false) => {
     const videosContainer = getElement("videos-container");
     videosContainer.innerHTML = "";
+
+    // sorting cards if sort button clicked
+    if (isSorted) {
+        cards = cards.sort((a, b) => parseInt(a.others.views) - parseInt(b.others.views));
+    }
 
     if (cards.length > 0) {
         videosContainer.classList.add("grid");
         for (const card of cards) {
+            // getting videos duration
             const hours = secondsToHours(parseInt(card.others.posted_date));
             const minutes = secondsToMinutes(parseInt(card.others.posted_date));
 
+            // rendering cards
             const div = document.createElement("div");
             div.innerHTML = `
                 <div class="mb-4 relative">
@@ -80,6 +87,7 @@ const displayCards = (cards) => {
             videosContainer.appendChild(div);
         }
     } else {
+        // handling empty container (showing error message if cards.length === 0)
         videosContainer.classList.remove("grid");
         videosContainer.innerHTML = `
         <div class="flex items-center justify-center error-container">
@@ -92,13 +100,11 @@ const displayCards = (cards) => {
     }
 }
 
-// handle sort by view button
+// handle sort by views button
 const sortCardsByViews = () => {
-    // sorting cards if sort button clicked
-    // if (true) {
-    //     cards.sort((a, b) => parseInt(a.others.views) - parseInt(b.others.views));
-    // }
+    renderCards(cards, true);
 }
 
-
+// initial function calls
 loadCategoryButtons();
+loadCardContents(1000);
