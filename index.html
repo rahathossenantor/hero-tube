@@ -17,12 +17,12 @@
 
 <body class="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 font-inter">
     <header>
-        <nav class="py-4 border-b">
+        <nav class="py-3 border-b">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
                     <a class="link normal-case text-xl"><img src="./images/Logo.png" alt="logo"></a>
                 </div>
-                <div class="navbar-center lg:flex">
+                <div class="navbar-center lg:flex md:flex hidden">
                     <button onclick="sortCardsByViews()" id="sort-by-views" class="btn btn-active normal-case text-[17px]">Sort by view</button>
                 </div>
                 <div class="navbar-end">
@@ -35,8 +35,8 @@
     <main>
         <section id="category">
             <!-- category container -->
-            <div class="flex justify-center py-5">
-                <div id="category-btn-container">
+            <div class="flex justify-center pt-5">
+                <div id="category-btn-container" class="flex flex-wrap justify-center gap-5">
                 </div>
             </div>
         </section>

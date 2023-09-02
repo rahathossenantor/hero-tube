@@ -32,9 +32,8 @@ const loadCategoryButtons = async () => {
     // display category buttons
     for(let category of categories) {
         const categoryButtonDiv = document.createElement("div");
-        categoryButtonDiv.classList.add("inline-block");
         categoryButtonDiv.innerHTML = `
-            <button onclick="loadCardContents('${category.category_id}')" class="btn normal-case font-normal px-[20px] mx-[10px] text-[17px] category-btn">${category.category}</button>
+            <button onclick="loadCardContents('${category.category_id}')" class="btn normal-case font-normal px-[20px] text-[17px] category-btn">${category.category}</button>
         `;
         categoryContainer.appendChild(categoryButtonDiv);
     }
@@ -70,7 +69,7 @@ const renderCards = (cards, isSorted = false) => {
             const div = document.createElement("div");
             div.innerHTML = `
                 <div class="mb-4 relative">
-                    <img src="${card.thumbnail}" alt="image" class="w-full h-[230px] inline-block rounded-lg">
+                    <img src="${card.thumbnail}" alt="image" class="w-full h-[220px] inline-block rounded-lg">
                     ${card.others.posted_date ? `<div class="absolute bottom-3 right-3 bg-[#171717] rounded-md px-2 py-1"><p class="text-white">${hours} hrs ${minutes} min ago</p></div>` : ``}
                 </div>
                 <div class="flex">
@@ -92,7 +91,7 @@ const renderCards = (cards, isSorted = false) => {
         videosContainer.innerHTML = `
         <div class="flex items-center justify-center error-container">
             <div class="text-center">
-                <div class="flex justify-center"><img src="./images/Icon.png" alt="icon" class="inline-block mb-10"></div>
+                <div class="flex justify-center"><img src="./images/Icon.png" alt="icon" class="inline-block mb-5"></div>
                 <h1 class="text-3xl font-semibold">Oops! Sorry!!! Content unavailable!</h1>
             </div>
         </div>
