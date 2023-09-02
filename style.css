@@ -8,3 +8,7 @@
     background-color: #ff0000;
     color: white;
 }
+
+.error-container {
+    height: 60vh;
+}

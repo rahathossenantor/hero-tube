@@ -24,7 +24,7 @@
                     <a class="link normal-case text-xl"><img src="./images/Logo.png" alt="logo"></a>
                 </div>
                 <div class="navbar-center lg:flex">
-                    <button id="sort-by-views" class="btn btn-active normal-case text-[17px]">Sort by view</button>
+                    <button onclick="sortCardsByViews()" id="sort-by-views" class="btn btn-active normal-case text-[17px]">Sort by view</button>
                 </div>
                 <div class="navbar-end">
                     <button class="btn hover:bg-[#ff0000] hover:text-white normal-case bg-[#ff0000] text-white px-7 text-[17px]">Blogs</button>
@@ -42,11 +42,11 @@
             </div>
         </section>
 
-        <hr>
+        <!-- <hr> -->
 
         <section id="videos">
             <!-- videos container -->
-            <div id="videos-container" class="grid grid-cols-4 gap-5 my-5">
+            <div id="videos-container" class="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 my-5">
             </div>
         </section>
     </main>
