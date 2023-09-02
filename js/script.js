@@ -32,7 +32,7 @@ const loadCategoryButtons = async () => {
     for(let category of categories) {
         const categoryButtonDiv = document.createElement("div");
         categoryButtonDiv.innerHTML = `
-            <button onclick="loadCardContents('${category.category_id}')" class="btn normal-case font-normal px-[20px] text-[17px] category-btn">${category.category}</button>
+            <button onclick="loadCardContents('${category.category_id}')" class="btn normal-case font-normal px-[25px] text-[17px] category-btn">${category.category}</button>
         `;
         categoryContainer.appendChild(categoryButtonDiv);
     }
