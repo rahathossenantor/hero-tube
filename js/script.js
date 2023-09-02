@@ -54,7 +54,7 @@ const renderCards = (cards, isSorted = false) => {
 
     // sorting cards if sort button clicked
     if (isSorted) {
-        cards = cards.sort((a, b) => parseInt(a.others.views) - parseInt(b.others.views));
+        cards = cards.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
     }
 
     if (cards.length > 0) {
