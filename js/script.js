@@ -92,4 +92,13 @@ const displayCards = (cards) => {
     }
 }
 
+// handle sort by view button
+const sortCardsByViews = () => {
+    // sorting cards if sort button clicked
+    // if (true) {
+    //     cards.sort((a, b) => parseInt(a.others.views) - parseInt(b.others.views));
+    // }
+}
+
+
 loadCategoryButtons();
